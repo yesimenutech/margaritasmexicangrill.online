@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margaritas of Cordova | Authentic Mexican Food & Drinks</title>
+    <meta name="description" content="Experience vibrant and authentic Mexican cuisine at Margaritas of Cordova. Enjoy our fresh ingredients, bold flavors, and signature margaritas.">
+    <link rel="icon" id="favicon" type="image/png" href="https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto:eco,dpr_auto,w_250/v1784216738/MargaritasofCordovaLOGO_fvb9ic.png">
+    
+    <!-- SEO & Open Graph -->
+    <meta property="og:title" content="Margaritas of Cordova | Mexican Food">
+    <meta property="og:description" content="Savor the true essence of Mexican cooking. Great food, refreshing drinks, and a place to feel at home.">
+    <meta property="og:image" content="https://res.cloudinary.com/dzklt0a5u/image/upload/v1784216897/dghdgfh_kqmfch.jpg">
+    <meta property="og:url" content="https://margaritasofcordova.com">
+    <link rel="canonical" href="https://margaritasofcordova.com">
+    
+    <!-- Schema.org for Restaurant -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Margaritas of Cordova",
+      "image": "https://res.cloudinary.com/dzklt0a5u/image/upload/v1784216897/dghdgfh_kqmfch.jpg",
+      "servesCuisine": "Mexican",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1805 N Germantown Pkwy",
+        "addressLocality": "Cordova",
+        "addressRegion": "TN",
+        "postalCode": "38016",
+        "addressCountry": "US"
+      },
+      "telephone": "+19019070050",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "17:00",
+          "closes": "22:00"
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Branding Colors: Yellow, Green, White */
+            --color-primary: #0F4C36; /* Deep Palm Green */
+            --color-primary-light: #1A6B4C; 
+            --color-accent: #F2C029; /* Margarita Yellow */
+            --color-accent-hover: #D9A81E;
+            --color-text-dark: #1A2620;
+            --color-text-light: #4A5D54;
+            --color-white: #FFFFFF;
+            --color-background: #FDFDFB; /* Warm off-white */
+            --color-footer: #082E20;
+            
+            /* Typography */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Outfit', sans-serif;
+            
+            /* UI Elements */
+            --border-radius: 16px;
+            --border-radius-lg: 24px;
+            --shadow-sm: 0 4px 6px rgba(15, 76, 54, 0.05);
+            --shadow-md: 0 10px 30px rgba(15, 76, 54, 0.08);
+            --shadow-lg: 0 20px 40px rgba(15, 76, 54, 0.12);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Reset & Base */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--color-text-dark);
+            background-color: var(--color-background);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(15, 76, 54, 0.05);
+        }
+
+        .navbar.scrolled {
+            padding: 12px 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--color-primary);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .navbar-brand img {
+            height: 45px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+            letter-spacing: 1.5px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--color-primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-accent);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            background: var(--color-background);
+            border-radius: 30px;
+            padding: 4px;
+            border: 1px solid rgba(15, 76, 54, 0.1);
+        }
+
+        .lang-btn {
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            transition: var(--transition);
+            color: var(--color-text-light);
+        }
+
+        .lang-btn.active {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .navbar-toggler {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .toggler-icon {
+            width: 30px;
+            height: 2px;
+            background-color: var(--color-primary);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-radius: 30px;
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: var(--color-accent);
+            color: var(--color-text-dark);
+            border: 2px solid var(--color-accent);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-accent-hover);
+            border-color: var(--color-accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background-image: url('https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_1920/v1784216897/dghdgfh_kqmfch.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(15, 76, 54, 0.85) 0%, rgba(15, 76, 54, 0.4) 100%);
+            z-index: 1;
+        }
+
+        /* Subtle Palm Leaf SVG Pattern Overlay */
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83-53.797 53.797-.83-.83L54.627 0zM27.313 0l.83.83-26.483 26.483-.83-.83L27.313 0zM0 27.313l.83-.83 26.483 26.483-.83.83L0 27.313z' fill='%23F2C029' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            z-index: 1;
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text {
+            color: var(--color-white);
+            animation: slideUp 1s ease-out;
+        }
+
+        .hero-logo {
+            max-height: 140px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: var(--color-accent);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .hero-subtitle::before {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background-color: var(--color-accent);
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 5vw, 5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .hero-title span {
+            color: var(--color-accent);
+            font-style: italic;
+        }
+
+        .hero-address {
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .hero-address svg {
+            flex-shrink: 0;
+            margin-top: 5px;
+            fill: var(--color-accent);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        menutech-reservations {
+            display: inline-block;
+            transition: var(--transition);
+        }
+        
+        menutech-reservations:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Decorative Leaf */
+        .hero-image-wrapper {
+            position: relative;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        .hero-image-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50,100 C50,100 0,60 0,30 C0,13.431 13.431,0 30,0 C42.53,0 50,10 50,10 C50,10 57.47,0 70,0 C86.569,0 100,13.431 100,30 C100,60 50,100 50,100 Z' fill='%231A6B4C' opacity='0.3'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+
+        /* Typography & Titles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-subtitle {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--color-accent-hover);
+            margin-bottom: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-subtitle::before, .section-subtitle::after {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background-color: var(--color-accent-hover);
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            color: var(--color-primary);
+            line-height: 1.2;
+        }
+
+        /* About Section (Asymmetric Layout) */
+        .about-section {
+            padding: 120px 0;
+            background-color: var(--color-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-images {
+            position: relative;
+        }
+
+        .about-image {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            width: 80%;
+        }
+
+        .about-image:nth-child(2) {
+            position: absolute;
+            bottom: -40px;
+            right: 0;
+            width: 60%;
+            border: 10px solid var(--color-white);
+            z-index: 2;
+        }
+
+        .about-text {
+            padding-right: 40px;
+        }
+
+        .about-text h2 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: var(--color-primary);
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .about-text p {
+            color: var(--color-text-light);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .about-text p:first-of-type {
+            font-size: 1.25rem;
+            color: var(--color-text-dark);
+            font-weight: 500;
+        }
+
+        /* Decorative separator */
+        .separator {
+            width: 100%;
+            height: 40px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23FDFDFB'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+            margin-top: -40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 120px 0;
+            background-color: var(--color-background);
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='2' fill='%230F4C36' fill-opacity='0.03'/%3E%3C/svg%3E");
+        }
+
+        #gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 50px;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: var(--border-radius-lg);
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            cursor: pointer;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.03);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .gallery-img:nth-child(4n-1), .gallery-img:nth-child(4n-2) {
+            grid-column: span 1;
+        }
+
+        @media (min-width: 992px) {
+            .gallery-img:nth-child(1) { grid-column: span 2; grid-row: span 2; height: 724px; }
+        }
+
+        /* Info Section (Visit Us) */
+        .info-section {
+            padding: 100px 0;
+            background-color: var(--color-white);
+            position: relative;
+        }
+
+        .info-box {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--color-primary);
+            border-radius: var(--border-radius-lg);
+            padding: 70px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            color: var(--color-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83-53.797 53.797-.83-.83L54.627 0zM27.313 0l.83.83-26.483 26.483-.83-.83L27.313 0zM0 27.313l.83-.83 26.483 26.483-.83.83L0 27.313z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+            z-index: 0;
+        }
+
+        .info-box > * { position: relative; z-index: 1; }
+
+        .info-box .section-title {
+            color: var(--color-accent);
+        }
+        
+        .info-box .section-subtitle {
+            color: var(--color-white);
+        }
+        .info-box .section-subtitle::before, .info-box .section-subtitle::after {
+            background-color: var(--color-white);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .info-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .info-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 20px;
+            fill: var(--color-accent);
+        }
+
+        .info-item h4 {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            color: var(--color-accent);
+            margin-bottom: 15px;
+        }
+
+        .info-item p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: var(--color-footer);
+            padding: 80px 0 30px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            max-width: 180px;
+            margin-bottom: 20px;
+            background-color: var(--color-white);
+            padding: 15px;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .footer-title {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            color: var(--color-white);
+            margin-bottom: 25px;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--color-accent);
+        }
+
+        .footer-col p {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        #social-icons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            color: var(--color-white);
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .social-link:hover {
+            background: var(--color-accent);
+            color: var(--color-footer);
+            transform: translateY(-5px);
+            border-color: var(--color-accent);
+        }
+
+        .copyright-area {
+            text-align: center;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .copyright-area a {
+            color: var(--color-accent);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .copyright-area a:hover {
+            color: var(--color-accent-hover);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-address {
+                justify-content: center;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-subtitle {
+                justify-content: center;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            .about-text {
+                padding-right: 0;
+                text-align: center;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .footer-logo {
+                margin: 0 auto 20px auto;
+            }
+            .footer-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            #social-icons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-toggler {
+                display: flex;
+            }
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--color-white);
+                flex-direction: column;
+                padding: 30px 20px;
+                gap: 25px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                transform: translateY(-150%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                border-top: 1px solid rgba(15, 76, 54, 0.05);
+            }
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            .lang-switcher {
+                margin-top: 10px;
+            }
+            .about-images {
+                margin-top: 40px;
+            }
+            .about-image:nth-child(2) {
+                width: 70%;
+                bottom: -20px;
+            }
+            .info-box {
+                padding: 40px 20px;
+            }
+            .copyright-area {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+    
+    <script>
+        window.MENU_TECH_STATE = {"lang":"en","showReservations":false,"showAbout":true,"showPromo":false,"showGallery":true,"showCatering":false,"showInfo":true,"showDelivery":false,"cuid":"0000000000","ruid":"00000000000","title":"Margaritas of Cordova","logoImg":"https://res.cloudinary.com/dzklt0a5u/image/upload/v1784216738/MargaritasofCordovaLOGO_fvb9ic.png","heroAddress":"1805 N Germantown Pkwy, Cordova, TN, United States, 38016","heroImg":"https://res.cloudinary.com/dzklt0a5u/image/upload/v1784216897/dghdgfh_kqmfch.jpg","aboutImg1":"https://res.cloudinary.com/dzklt0a5u/image/upload/v1784217461/IMG-20260618-WA0004_w8jdjg.jpg","aboutImg2":"https://res.cloudinary.com/dzklt0a5u/image/upload/v1784217463/IMG-20260618-WA0005_ivaklp.jpg","gallery":["https://res.cloudinary.com/dzklt0a5u/image/upload/v1784217506/dghdgfh_lu7dgx.jpg","https://res.cloudinary.com/dzklt0a5u/image/upload/v1784217507/IMG-20260618-WA0009_qe8ieb.jpg","https://res.cloudinary.com/dzklt0a5u/image/upload/v1784217507/IMG-20260618-WA0008_nu49hu.jpg","https://res.cloudinary.com/dzklt0a5u/image/upload/v1784217509/IMG-20260618-WA0007_qk7ekj.jpg","https://res.cloudinary.com/dzklt0a5u/image/upload/v1784217510/IMG-20260618-WA0006_xm6oqv.jpg","https://res.cloudinary.com/dzklt0a5u/image/upload/v1784217511/IMG-20260618-WA0005_i1ujkn.jpg","https://res.cloudinary.com/dzklt0a5u/image/upload/v1784217511/IMG-20260618-WA0004_lg9kei.jpg","https://res.cloudinary.com/dzklt0a5u/image/upload/v1784217512/IMG-20260618-WA0003_zipqht.jpg","https://res.cloudinary.com/dzklt0a5u/image/upload/v1784217513/IMG-20260618-WA0002_khmppz.jpg","https://res.cloudinary.com/dzklt0a5u/image/upload/v1784217514/IMG-20260618-WA0001_rjnokm.jpg"],"contact":{"phone":"901 907 0050","address":" 1805 N Germantown Pkwy, Cordova, TN, United States, 38016","hours":"Monday - Sunday: 5PM - 10PM"},"socials":[{"platform":"instagram","url":"#"},{"platform":"facebook","url":"https://www.facebook.com/margaritasofcordova?_rdc=1&_rdr#"}],"paragraphs":{"about":"At Margaritas of Cordova, we take pride in bringing our guests vibrant and authentic Mexican cuisine, crafted with care and rich culinary tradition. Every dish we serve is full of bold flavors and prepared to deliver a memorable dining experience. We are confident you will leave satisfied.\n\nThe secret to our success is simple: creating exceptional meals using fresh, high-quality ingredients that capture the true essence of Mexican cooking in every bite.\n\nOur mission is to help you savor the moments that truly matter. Enjoy great food. Sip on a refreshing drink. And above all, unwind and feel at home. We sincerely appreciate your continued support and trust"},"titles":{"about-title":"We are Margaritas of Cordova","about-subtitle":"About Us","gallery-title":"Delicious Mexican Food","gallery-subtitle":"Love At First Bite","info-title":"Information","info-subtitle":"Visit Us"},"info":{"hours":"Sunday to Thursday: 11:00 a.m. – 10:00 p.m.\n\nFriday & Saturday: 11:00 a.m. – 11:00 p.m.","phone":"901 907 0050","address":"1805 N Germantown Pkwy, Cordova, TN, United States, 38016"}};
+    </script>
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="navbar-brand">
+                <img src="" id="nav-logo-img" alt="Logo">
+                <span id="nav-brand">Margaritas of Cordova</span>
+            </a>
+            
+            <button class="navbar-toggler" id="navbar-toggler" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+            </button>
+            
+            <ul class="nav-menu" id="nav-menu" role="menubar">
+                <li class="nav-item" role="none">
+                    <a href="#" class="nav-link active" data-es="Inicio" data-en="Home" role="menuitem">Home</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="#about-section" class="nav-link" data-es="Nosotros" data-en="About Us" role="menuitem">About Us</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="#gallery-section" class="nav-link" data-es="Galería" data-en="Gallery" role="menuitem">Gallery</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="#info-section" class="nav-link" data-es="Contacto" data-en="Contact" role="menuitem">Contact</a>
+                </li>
+                <li class="nav-item lang-switcher">
+                    <span class="lang-btn" id="lang-es" aria-label="Cambiar a Español">ES</span>
+                    <span class="lang-btn active" id="lang-en" aria-label="Switch to English">EN</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <img src="" id="hero-logo" alt="Margaritas of Cordova Logo" class="hero-logo">
+                    <h2 class="hero-subtitle" data-es="Auténtico Sabor Mexicano" data-en="Authentic Mexican Flavor">Authentic Mexican Flavor</h2>
+                    <h1 class="hero-title">Taste the <span>Tradition</span></h1>
+                    
+                    <p class="hero-address">
+                        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <span id="hero-address">1805 N Germantown Pkwy, Cordova, TN, United States, 38016</span>
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <!-- 1. Menutech Scripts -->
+                        <script src="https://www.fbgcdn.com/embedder/js/ewm2.js"></script>
+                        <script src="https://menutech.xyz/menutechUI.min.js"></script>
+
+                        <!-- 2. Interactive Buttons -->
+                        <a href="https://margaritasofcordova.onlineordering.io/en/menu" class="btn btn-primary" target="_blank" data-es="Ordenar en Línea" data-en="Order Online">Order Online</a>
+
+                        <div id="hero-reservations-wrapper" style="display: none;">
+                            <menutech-reservations id="hero-reservations" cuid="0000000000" ruid="00000000000" background="#0F4C36" color="#FFFFFF" data-glf-cuid="0000000000" data-glf-ruid="00000000000" data-glf-reservation="true"></menutech-reservations>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section" id="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <span class="section-subtitle" id="about-subtitle" data-es="Sobre Nosotros" data-en="About Us">About Us</span>
+                    <h2 id="about-title" data-es="Somos Margaritas of Cordova" data-en="We are Margaritas of Cordova">We are Margaritas of Cordova</h2>
+                    <p id="about-p1" data-es="En Margaritas of Cordova, nos enorgullece ofrecer a nuestros invitados una cocina mexicana vibrante y auténtica, elaborada con cuidado y rica tradición culinaria. Cada plato que servimos está lleno de sabores audaces y preparado para brindar una experiencia gastronómica memorable. Estamos seguros de que se irá satisfecho." data-en="At Margaritas of Cordova, we take pride in bringing our guests vibrant and authentic Mexican cuisine, crafted with care and rich culinary tradition. Every dish we serve is full of bold flavors and prepared to deliver a memorable dining experience. We are confident you will leave satisfied."></p>
+                    <p id="about-p2" data-es="El secreto de nuestro éxito es simple: crear comidas excepcionales utilizando ingredientes frescos y de alta calidad que capturan la verdadera esencia de la cocina mexicana en cada bocado." data-en="The secret to our success is simple: creating exceptional meals using fresh, high-quality ingredients that capture the true essence of Mexican cooking in every bite."></p>
+                    <p id="about-p3" data-es="Nuestra misión es ayudarle a saborear los momentos que realmente importan. Disfrute de buena comida. Beba una bebida refrescante. Y sobre todo, relájese y siéntase como en casa. Agradecemos sinceramente su continuo apoyo y confianza." data-en="Our mission is to help you savor the moments that truly matter. Enjoy great food. Sip on a refreshing drink. And above all, unwind and feel at home. We sincerely appreciate your continued support and trust"></p>
+                </div>
+                <div class="about-images">
+                    <img id="about-img-1" src="" alt="Authentic Mexican Dish" class="about-image" loading="lazy" width="600" height="500">
+                    <img id="about-img-2" src="" alt="Fresh Ingredients" class="about-image" loading="lazy" width="400" height="400">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="separator"></div>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle" id="gallery-subtitle" data-es="Amor al Primer Bocado" data-en="Love At First Bite">Love At First Bite</span>
+                <h2 class="section-title" id="gallery-title" data-es="Deliciosa Comida Mexicana" data-en="Delicious Mexican Food">Delicious Mexican Food</h2>
+            </div>
+            <div id="gallery-container">
+                <!-- Dynamically populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section" id="info-section">
+        <div class="container">
+            <div class="info-box">
+                <span class="section-subtitle" id="info-subtitle" data-es="Visítanos" data-en="Visit Us">Visit Us</span>
+                <h2 class="section-title" id="info-title" data-es="Información" data-en="Information">Information</h2>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <svg class="info-icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                        <h4 data-es="Horarios" data-en="Opening Hours">Opening Hours</h4>
+                        <p id="info-hours">Monday - Sunday: 5PM - 10PM</p>
+                    </div>
+                    <div class="info-item">
+                        <svg class="info-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <h4 data-es="Teléfono" data-en="Phone">Phone</h4>
+                        <p id="info-phone">901 907 0050</p>
+                    </div>
+                    <div class="info-item">
+                        <svg class="info-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <h4 data-es="Dirección" data-en="Address">Address</h4>
+                        <p id="info-address">1805 N Germantown Pkwy, Cordova, TN, United States, 38016</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="" id="footer-logo" alt="Logo" class="footer-logo">
+                    <h4 class="footer-title" data-es="Contáctanos" data-en="Contact Us">Contact Us</h4>
+                    <p id="footer-address">1805 N Germantown Pkwy, Cordova, TN, United States, 38016</p>
+                    <p id="footer-phone">Phone: 901 907 0050</p>
+                    <div id="social-icons"></div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title" data-es="Horarios" data-en="Opening Hours">Opening Hours</h4>
+                    <p id="footer-hours">Monday - Sunday: 5PM - 10PM</p>
+                </div>
+            </div>
+            
+            <div class="copyright-area">
+                <span>&copy; <span id="copyright-year"></span> Margaritas of Cordova. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">All rights reserved.</span></span>
+                <span>Powered by <a href="https://menutech.xyz/" target="_blank">Menutech</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Optimization mapping
+        const optimizeCloudinaryUrl = (url, options = {}) => {
+            if (!url || typeof url !== 'string' || !url.includes('res.cloudinary.com')) return url;
+            const [baseUrl, hash] = url.split('#');
+            if (!baseUrl.includes('/upload/')) return url;
+            const parts = baseUrl.split('/upload/');
+
+            let pathSegments = parts[1].split('/');
+            if (pathSegments.length > 1) {
+                const firstSegment = pathSegments[0];
+                const isVersion = /^v\d+$/.test(firstSegment);
+                const isTransformation = !isVersion && (firstSegment.includes('_') || firstSegment.includes(','));
+                if (isTransformation) pathSegments.shift();
+            }
+            const cleanPath = pathSegments.join('/');
+
+            let transformations = ['f_auto', 'q_auto:eco', 'dpr_auto'];
+            if (options.width) transformations.push(`w_${options.width}`);
+            if (options.height) transformations.push(`h_${options.height}`);
+            if (options.crop) transformations.push(`c_${options.crop}`);
+            
+            const transformationString = transformations.join(',');
+            return hash ? `${parts[0]}/upload/${transformationString}/${cleanPath}#${hash}` : `${parts[0]}/upload/${transformationString}/${cleanPath}`;
+        };
+
+        const SOCIAL_ICONS = {
+            instagram: `<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>`,
+            facebook: `<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg>`,
+            tiktok: `<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v7.2c0 1.53-.33 3.11-1.08 4.49-.97 1.77-2.67 3.12-4.63 3.64-1.95.51-4.06.33-5.88-.61-1.83-.93-3.23-2.52-3.95-4.42-.71-1.9-.66-4.04.14-5.89.81-1.85 2.37-3.32 4.25-4.07 1.88-.74 4.02-.75 5.92-.02v4.22c-1.02-.6-2.28-.69-3.37-.21-1.09.47-1.95 1.4-2.32 2.5-.37 1.1-.23 2.34.38 3.33.6 1 1.63 1.71 2.78 1.94 1.14.23 2.36-.02 3.32-.69.96-.66 1.61-1.74 1.77-2.9.15-1.16.14-2.34.14-3.51V.02z"/></svg>`
+        };
+
+        // Advanced internal dictionary for dynamic data fields
+        const TRANSLATIONS = {
+            es: {
+                "We are Margaritas of Cordova": "Somos Margaritas de Cordova",
+                "At Margaritas of Cordova, we take pride in bringing our guests vibrant and authentic Mexican cuisine, crafted with care and rich culinary tradition. Every dish we serve is full of bold flavors and prepared to deliver a memorable dining experience. We are confident you will leave satisfied.": "En Margaritas de Cordova, nos enorgullece ofrecer a nuestros invitados una cocina mexicana vibrante y auténtica, elaborada con cuidado y rica tradición culinaria. Cada plato que servimos está lleno de sabores audaces y preparado para brindar una experiencia gastronómica memorable. Estamos seguros de que se irá satisfecho.",
+                "The secret to our success is simple: creating exceptional meals using fresh, high-quality ingredients that capture the true essence of Mexican cooking in every bite.": "El secreto de nuestro éxito es simple: crear comidas excepcionales utilizando ingredientes frescos y de alta calidad que capturan la verdadera esencia de la cocina mexicana en cada bocado.",
+                "Our mission is to help you savor the moments that truly matter. Enjoy great food. Sip on a refreshing drink. And above all, unwind and feel at home. We sincerely appreciate your continued support and trust": "Nuestra misión es ayudarle a saborear los momentos que realmente importan. Disfrute de buena comida. Beba una bebida refrescante. Y sobre todo, relájese y siéntase como en casa. Agradecemos sinceramente su continuo apoyo y confianza."
+            }
+        };
+
+        let currentLang = 'en';
+
+        function applyLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            
+            document.querySelectorAll('[data-es], [data-en]').forEach(el => {
+                const targetText = el.getAttribute(`data-${lang}`);
+                if(targetText) el.textContent = targetText;
+            });
+
+            // Update custom dynamic content strictly based on dictionary if needed
+            document.querySelectorAll('p[id^="about-p"], #about-title').forEach(el => {
+                const enText = el.getAttribute('data-en');
+                if(enText && lang === 'es' && TRANSLATIONS.es[enText]) {
+                    el.textContent = TRANSLATIONS.es[enText];
+                } else if(enText) {
+                    el.textContent = enText;
+                }
+            });
+
+            // Switch UI
+            document.getElementById('lang-es').classList.toggle('active', lang === 'es');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+        }
+
+        function updateUI(data) {
+            if (!data) return;
+
+            // Brand & Logo
+            if (data.title) document.getElementById('nav-brand').textContent = data.title;
+            if (data.logoImg) {
+                const optimizedLogo = optimizeCloudinaryUrl(data.logoImg, { width: 300 });
+                document.getElementById('nav-logo-img').src = optimizedLogo;
+                document.getElementById('hero-logo').src = optimizedLogo;
+                document.getElementById('footer-logo').src = optimizedLogo;
+                document.getElementById('favicon').href = optimizedLogo;
+            }
+
+            // Hero
+            if (data.heroAddress !== undefined) {
+                document.getElementById('hero-address').textContent = data.heroAddress;
+            }
+            if (data.heroImg) {
+                document.getElementById('hero-section').style.backgroundImage = `url('${optimizeCloudinaryUrl(data.heroImg, { width: 1920 })}')`;
+            }
+
+            // Sections visibility
+            const sections = {
+                'about-section': data.showAbout !== false,
+                'gallery-section': data.showGallery !== false,
+                'info-section': data.showInfo !== false
+            };
+            Object.keys(sections).forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.style.display = sections[id] ? 'block' : 'none';
+            });
+            // Hide separator if about is hidden
+            const sep = document.querySelector('.separator');
+            if (sep) sep.style.display = sections['about-section'] ? 'block' : 'none';
+
+            // Reservation Button handling (Orders is now a static link)
+            const cuid = data.cuid || '';
+            const ruid = data.ruid || '';
+            
+            ['hero-reservations'].forEach((id) => {
+                const btn = document.getElementById(id);
+                if(btn) {
+                    const newBtn = document.createElement('menutech-reservations');
+                    newBtn.id = id;
+                    newBtn.setAttribute('cuid', cuid);
+                    newBtn.setAttribute('ruid', ruid);
+                    newBtn.setAttribute('background', '#0F4C36');
+                    newBtn.setAttribute('color', '#FFFFFF');
+                    newBtn.setAttribute('data-glf-cuid', cuid);
+                    newBtn.setAttribute('data-glf-ruid', ruid);
+                    newBtn.setAttribute('data-glf-reservation', 'true');
+                    btn.parentNode.replaceChild(newBtn, btn);
+                }
+            });
+
+            const resWrapper = document.getElementById('hero-reservations-wrapper');
+            if (resWrapper) {
+                resWrapper.style.setProperty('display', (data.showReservations !== false) ? 'block' : 'none', 'important');
+            }
+
+            if (window.glfBindButtons) setTimeout(() => { window.glfBindButtons(); }, 1000);
+
+            // Images
+            if (data.aboutImg1) document.getElementById('about-img-1').src = optimizeCloudinaryUrl(data.aboutImg1, { width: 800 });
+            if (data.aboutImg2) document.getElementById('about-img-2').src = optimizeCloudinaryUrl(data.aboutImg2, { width: 600 });
+
+            // Info & Footer mapping
+            if (data.info) {
+                const hrStr = (data.info.hours || '').replace(/\n/g, '<br>');
+                document.getElementById('info-hours').innerHTML = hrStr;
+                document.getElementById('footer-hours').innerHTML = hrStr;
+                
+                document.getElementById('info-phone').textContent = data.info.phone || '';
+                document.getElementById('footer-phone').textContent = 'Phone: ' + (data.info.phone || '');
+                
+                document.getElementById('info-address').textContent = data.info.address || '';
+                document.getElementById('footer-address').textContent = data.info.address || '';
+            }
+
+            // Socials (Replacing twitter with tiktok if exists based on requirements)
+            if (data.socials) {
+                const container = document.getElementById('social-icons');
+                container.innerHTML = data.socials.map(s => {
+                    let platform = s.platform.toLowerCase();
+                    if(platform === 'twitter' || platform === 'x') platform = 'tiktok';
+                    return `
+                        <a href="${s.url}" target="_blank" class="social-link" aria-label="${platform}">
+                            ${SOCIAL_ICONS[platform] || SOCIAL_ICONS.instagram}
+                        </a>
+                    `;
+                }).join('');
+            }
+
+            // Gallery Masonry Style Injection
+            if (data.gallery) {
+                const container = document.getElementById('gallery-container');
+                container.innerHTML = data.gallery.map(img => `
+                    <img src="${optimizeCloudinaryUrl(img, { width: 600, height: 600, crop: 'fill' })}" class="gallery-img" loading="lazy" width="600" height="600" alt="Mexican Food Dish">
+                `).join('');
+            }
+
+            // Dynamically override Data Attributes for texts
+            if (data.titles) {
+                if(data.titles['about-title']) document.getElementById('about-title').setAttribute('data-en', data.titles['about-title']);
+            }
+
+            if (data.paragraphs && data.paragraphs.about) {
+                const segments = data.paragraphs.about.split('\n\n');
+                ['about-p1', 'about-p2', 'about-p3'].forEach((id, index) => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        const segment = segments[index] || "";
+                        el.setAttribute('data-en', segment);
+                        el.style.display = segment.trim() === "" ? "none" : "block";
+                    }
+                });
+            }
+
+            // Apply selected language translations
+            applyLanguage(data.lang || currentLang);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+            if (window.MENU_TECH_STATE) updateUI(window.MENU_TECH_STATE);
+
+            document.getElementById('lang-es').addEventListener('click', () => applyLanguage('es'));
+            document.getElementById('lang-en').addEventListener('click', () => applyLanguage('en'));
+
+            // Navbar Scroll Effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
+            });
+
+            // Mobile Menu Toggle
+            const toggler = document.getElementById('navbar-toggler');
+            const menu = document.getElementById('nav-menu');
+            
+            toggler.addEventListener('click', () => {
+                const isExpanded = toggler.getAttribute('aria-expanded') === 'true';
+                toggler.setAttribute('aria-expanded', !isExpanded);
+                menu.classList.toggle('active');
+            });
+
+            // Close menu on link click
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.remove('active');
+                    toggler.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // Smooth Scroll Fix
+            setTimeout(() => { if(window.glfBindButtons) window.glfBindButtons(); }, 1500);
+        });
+
+        // Listen for editor updates
+        window.addEventListener('message', (event) => {
+            if (event.data.type === 'UPDATE_CONTENT') updateUI(event.data.data);
+        });
+    </script>
+</body>
+</html>
